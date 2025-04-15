@@ -11,7 +11,7 @@ export const useLimit = (optionsValue: number[]) => {
 	const [limit, setLimit] = useState(acceptableParam ?? optionsValue[0]);
 
 	useEffect(() => {
-		if (limit) {
+		if (acceptableParam) {
 			return;
 		}
 
@@ -23,7 +23,7 @@ export const useLimit = (optionsValue: number[]) => {
 			},
 			{ replace: true, preventScrollReset: true },
 		);
-	}, [limit, setUrlParams]);
+	}, [acceptableParam, setUrlParams]);
 
 	const handleChangeLimit = useCallback(
 		(e: React.ChangeEvent<HTMLSelectElement>) => {
