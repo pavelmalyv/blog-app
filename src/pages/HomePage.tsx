@@ -10,7 +10,7 @@ const HomePage = () => {
 	return (
 		<>
 			<Heading title="The blog" />
-			<PopularPosts />
+			<PopularPosts isAboveTheFold={true} />
 			<AllPosts />
 		</>
 	);

@@ -73,7 +73,7 @@ const AuthorPage = () => {
 				errorMessage={ERROR_MESSAGES.authorLoad}
 			>
 				<Heading title={user ? `${user.firstName} ${user.lastName}` : null} />
-				<User user={user ?? null} />
+				<User user={user ?? null} isAboveTheFold={true} />
 			</ErrorBoundaryDisplay>
 
 			<Section title="All articles by the author">

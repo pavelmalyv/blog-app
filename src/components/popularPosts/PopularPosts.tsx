@@ -11,7 +11,10 @@ import { useGetPostsQuery } from '@/api/postsSlice';
 import { MESSAGES } from '@/constants/messages';
 import { ERROR_MESSAGES } from '@/constants/error';
 
-const PopularPosts = () => {
+interface PopularPosts {
+	isAboveTheFold?: boolean;
+}
+const PopularPosts = ({ isAboveTheFold }: PopularPosts) => {
 	let posts: Posts | null[] = Array(4).fill(null);
 	let total: number | undefined;
 
@@ -47,7 +50,11 @@ const PopularPosts = () => {
 
 								return (
 									<li className={cl.item} key={key}>
-										<PostCard post={post} styleCard={stylesPostCard[i]} />
+										<PostCard
+											post={post}
+											styleCard={stylesPostCard[i]}
+											isImageEager={isAboveTheFold && i == 0}
+										/>
 									</li>
 								);
 							})}

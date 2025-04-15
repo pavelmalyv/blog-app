@@ -31,9 +31,10 @@ const UserTextItem = ({ title, titleId, text }: UserTextProps) => {
 
 interface UserProps {
 	user: User | null;
+	isAboveTheFold?: boolean;
 }
 
-const User = ({ user }: UserProps) => {
+const User = ({ user, isAboveTheFold = false }: UserProps) => {
 	const isLoading = !user;
 	const titleId = useId();
 
@@ -51,6 +52,7 @@ const User = ({ user }: UserProps) => {
 									width={user.image.width}
 									height={user.image.height}
 									alt={user.image.alt}
+									loading={isAboveTheFold ? 'eager' : 'lazy'}
 								/>
 							</picture>
 						) : (

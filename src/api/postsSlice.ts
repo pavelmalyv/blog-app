@@ -136,6 +136,7 @@ function addAdditionalFieldsPost(post: unknown) {
 					width="1600"
 					height="876"
 					alt="Blog"
+					loading="lazy"
 				/>
 			</picture>`;
 		const imageBodySecondary = `
@@ -147,6 +148,7 @@ function addAdditionalFieldsPost(post: unknown) {
 						width="1600"
 						height="876"
 						alt="Blog"
+						loading="lazy"
 					/>
 				</picture>
 				<figcaption>Definition: A grid is made up of columns, gutters, and margins that provide a structure for the layout of elements on a page.</figcaption>

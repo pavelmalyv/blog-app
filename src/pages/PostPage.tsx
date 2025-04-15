@@ -29,7 +29,7 @@ const PostPage = () => {
 						isThrowNotFound={true}
 						errorMessage={ERROR_MESSAGES.postLoad}
 					>
-						<Article post={data ?? null} />
+						<Article post={data ?? null} isAboveTheFold={true} />
 					</ErrorBoundaryDisplay>
 				</VisuallyHiddenLoader>
 

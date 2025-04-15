@@ -14,9 +14,10 @@ import { getDisplayDate } from '@/utils/date';
 interface ArticleProps {
 	post: Post | null;
 	labelledby?: boolean;
+	isAboveTheFold?: boolean;
 }
 
-const Article = ({ post, labelledby = true }: ArticleProps) => {
+const Article = ({ post, labelledby = true, isAboveTheFold = false }: ArticleProps) => {
 	const articleId = useId();
 
 	return (
@@ -43,6 +44,7 @@ const Article = ({ post, labelledby = true }: ArticleProps) => {
 							width={post.image.width}
 							height={post.image.height}
 							alt={post.image.alt}
+							loading={isAboveTheFold ? 'eager' : 'lazy'}
 						/>
 					</picture>
 				) : (

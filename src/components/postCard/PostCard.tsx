@@ -16,10 +16,16 @@ import { blogUrl } from '@/routes/routes';
 interface PostCardProps {
 	post: Post | null;
 	isCurrentPageAuthor?: boolean;
+	isImageEager?: boolean;
 	styleCard?: 'small' | 'small-horizontal' | 'dynamic-height' | 'large';
 }
 
-const PostCard = ({ post, isCurrentPageAuthor, styleCard = 'small' }: PostCardProps) => {
+const PostCard = ({
+	post,
+	isCurrentPageAuthor,
+	isImageEager = false,
+	styleCard = 'small',
+}: PostCardProps) => {
 	const titleId = useId();
 
 	return (
@@ -37,6 +43,7 @@ const PostCard = ({ post, isCurrentPageAuthor, styleCard = 'small' }: PostCardPr
 							width={post.thumbnail.width}
 							height={post.thumbnail.height}
 							alt={post.thumbnail.alt}
+							loading={isImageEager ? 'eager' : 'lazy'}
 						/>
 					</picture>
 				) : (
