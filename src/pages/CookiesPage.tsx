@@ -1,11 +1,12 @@
 import Heading from '@components/UI/heading/Heading';
 import Section from '@components/UI/section/Section';
 import Text from '@components/UI/text/Text';
-
 import { useTitle } from '@hooks/useTitle';
-import { SITE, SITE_NAME, SITE_URL } from '@/constants/config';
 
-export const EMAIL = 'pavelmalyv@gmail.com';
+const SITE_NAME = 'Blog';
+const SITE = 'pavelmalyv.github.io/blog-app/';
+const SITE_URL = 'https://pavelmalyv.github.io/blog-app/';
+const EMAIL = 'pavelmalyv@gmail.com';
 
 const CookiesPage = () => {
 	useTitle('Cookies Policy');
