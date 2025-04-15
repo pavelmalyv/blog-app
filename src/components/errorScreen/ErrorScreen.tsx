@@ -2,6 +2,7 @@ import cl from './ErrorScreen.module.scss';
 import Button from '../UI/Buttons/button/Button';
 
 import { useId } from 'react';
+import { baseUrl } from '@/routes/routes';
 
 interface ErrorProps {
 	title: string;
@@ -21,7 +22,7 @@ const ErrorScreen = ({ title, description, isLink = true }: ErrorProps) => {
 					</h1>
 					<div className={cl.description}>{description}</div>
 
-					{isLink && <Button to="/">Home</Button>}
+					{isLink && <Button to={baseUrl}>Home</Button>}
 				</div>
 			</div>
 		</section>

@@ -1,5 +1,6 @@
 import {
 	authorUrl,
+	baseUrl,
 	blogUrl,
 	cookiesUrl,
 	creditsUrl,
@@ -21,7 +22,7 @@ const NewslettersPage = lazy(() => import('@/pages/NewslettersPage'));
 
 const router = createBrowserRouter([
 	{
-		path: '/',
+		path: baseUrl,
 		element: (
 			<Suspense>
 				<Root />

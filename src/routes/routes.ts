@@ -1,17 +1,19 @@
 import type { BlogUrl, AuthorUrl } from '@/types/routes';
 
+export const baseUrl = import.meta.env.BASE_URL;
+
 export const blogUrl: BlogUrl = {
-	base: '/',
-	post: (id) => `/post/${id}`,
-	pagination: (page) => `/page/${page}`,
+	base: baseUrl,
+	post: (id) => `${baseUrl}post/${id}`,
+	pagination: (page) => `${baseUrl}page/${page}`,
 };
 
 export const authorUrl: AuthorUrl = {
-	profile: (id) => `/author/${id}`,
-	pagination: (id, page) => `/author/${id}/page/${page}`,
+	profile: (id) => `${baseUrl}author/${id}`,
+	pagination: (id, page) => `${baseUrl}author/${id}/page/${page}`,
 };
 
-export const policyUrl = '/policy';
-export const cookiesUrl = '/cookies';
-export const creditsUrl = '/credits';
-export const newslettersUrl = '/newsletters';
+export const policyUrl = `${baseUrl}policy`;
+export const cookiesUrl = `${baseUrl}cookies`;
+export const creditsUrl = `${baseUrl}credits`;
+export const newslettersUrl = `${baseUrl}newsletters`;
