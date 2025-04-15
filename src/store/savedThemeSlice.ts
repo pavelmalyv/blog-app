@@ -36,5 +36,6 @@ listenerMiddleware.startListening({
 		}
 
 		document.documentElement.setAttribute('data-theme', theme);
+		localStorage.setItem('saved-theme', theme);
 	},
 });
